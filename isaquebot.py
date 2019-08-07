@@ -14,6 +14,8 @@ def handle_messages(messages):
             bot.reply_to(message, 'Vamo fuma droga na casa do Sergio')
         if "maconha" in message.text:
             bot.reply_to(message, 'Onde?')
+        if "biome" in message.text:
+            bot.reply_to(message, 'Biome 🎵 Biomee 🎶')
 
 bot.set_update_listener(handle_messages)
 
