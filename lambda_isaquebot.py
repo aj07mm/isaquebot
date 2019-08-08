@@ -13,6 +13,7 @@ def get_random():
     return random.randrange(1, 100)
 
 def get_reply(message_text):
+    message_text = message_text.lower()
     random_number = get_random()
     reply = None
     if "sergio" in message_text:

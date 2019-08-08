@@ -10,6 +10,12 @@ class IsaqueBotTestCase(unittest.TestCase):
     def test_get_reply_sergio(self, mock_get_random):
         mock_get_random.return_value = 1
         self.assertEqual(get_reply("sergio"), 'Vamo fuma droga na casa do Sergio')
+
+    @patch("lambda_isaquebot.get_random")
+    def test_match_case_insensitive(self, mock_get_random):
+        mock_get_random.return_value = 1
+        self.assertEqual(get_reply("SERGIO"), 'Vamo fuma droga na casa do Sergio')
+
     def test_get_reply_no_match(self):
         self.assertEqual(get_reply("asodknas"), None)
 
